@@ -1,1 +1,6 @@
-from .fields import TimeZoneField, MarkdownCharField, MarkdownTextField
+from .fields import (
+    MarkdownCharField,
+    MarkdownTextField,
+    TimeZoneField,
+    UUIDPrimaryKeyField,
+)
