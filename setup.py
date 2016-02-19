@@ -17,6 +17,7 @@ setup(
     install_requires=[
         'Django>=1.8',
         'bleach>=1.4',
-        'Markdown>=2.6'
+        'Markdown>=2.6',
+        'pytz>=2015',
     ]
 )
