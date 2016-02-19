@@ -32,3 +32,13 @@ and release them as an open source package instead. Here are the fields that are
     [Markdown library](https://pythonhosted.org/Markdown/). One extension is enabled by default:
     [SmartyPants](https://pythonhosted.org/Markdown/extensions/smarty.html). SmartyPants is configured to use the
     correct Unicode characters (e.g. “) rather than HTML entities (e.g. `&ldquo;`).
+
+*   **UUIDPrimaryKeyField**
+
+    UUIDs are, in many ways, better primary keys than automatically incrementing integer fields. Unfortunately, the
+    default Django implementation—`UUIDField`—requires some boilerplate (including importing the `uuid` module) before
+    it can be used as a primary key. UUIDPrimaryKeyField manages the boilerplate for you. Just add
+
+        id = UUIDPrimaryKeyField()
+
+    to your model and everything will just work.

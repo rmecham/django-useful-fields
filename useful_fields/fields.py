@@ -1,6 +1,8 @@
 # coding: utf-8
 from __future__ import unicode_literals
 
+import uuid
+
 import bleach
 import pytz
 from django.core.exceptions import ValidationError
@@ -101,3 +103,11 @@ class MarkdownCharField(MarkdownMixin, models.CharField):
 class MarkdownTextField(MarkdownMixin, models.TextField):
     def pre_save(self, model_instance, add):
         return self.render(model_instance)
+
+
+class UUIDPrimaryKeyField(models.UUIDField):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('primary_key', True)
+        kwargs.setdefault('default', uuid.uuid4)
+        kwargs.setdefault('editable', False)
+        super(UUIDPrimaryKeyField, self).__init__(*args, **kwargs)
