@@ -14,4 +14,5 @@ setup(
     packages=['useful'],
     include_package_data=True,
     zip_safe=False,
+    requires=['bleach>=1.4', 'Markdown>=2.6']
 )
