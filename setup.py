@@ -14,5 +14,9 @@ setup(
     packages=['useful'],
     include_package_data=True,
     zip_safe=False,
-    install_requires=['bleach(>=1.4)', 'Markdown(>=2.6)']
+    install_requires=[
+        'Django>=1.8',
+        'bleach>=1.4',
+        'Markdown>=2.6'
+    ]
 )
