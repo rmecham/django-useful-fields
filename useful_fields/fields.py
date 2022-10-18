@@ -1,13 +1,10 @@
-# coding: utf-8
-from __future__ import unicode_literals
-
 import uuid
 
 import bleach
 import pytz
 from django.core.exceptions import ValidationError
 from django.db import models
-from django.utils.encoding import smart_text
+from django.utils.encoding import smart_str
 from markdown import markdown
 from markdown.extensions.smarty import SmartyExtension
 
@@ -38,7 +35,7 @@ class TimeZoneField(models.CharField):
         if value is None or value == '':
             return (None, None)
         if value is pytz.UTC or isinstance(value, pytz.tzinfo.BaseTzInfo):
-            return (value, smart_text(value))
+            return (value, smart_str(value))
         if isinstance(value, str):
             try:
                 return (pytz.timezone(value), value)
